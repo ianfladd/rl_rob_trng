@@ -1,0 +1,19 @@
+{
+    "names": {
+        "robot_description": {
+            "cmake-args": ["-DCMAKE_BUILD_TYPE=Release"]
+        },
+        "robot_bringup": {
+            "cmake-args": ["-DCMAKE_BUILD_TYPE=Release"]
+        },
+        "robot_moveit_config": {
+            "cmake-args": ["-DCMAKE_BUILD_TYPE=Release"]
+        },
+        "trajectory_generator": {
+            "cmake-args": ["-DCMAKE_BUILD_TYPE=Release"]
+        },
+        "rl_training": {
+            "cmake-args": ["-DCMAKE_BUILD_TYPE=Release"]
+        }
+    }
+}

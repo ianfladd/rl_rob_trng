@@ -1,0 +1,38 @@
+# SARSA RL Training Parameters
+
+rl_training_node:
+  ros__parameters:
+    # SARSA hyperparameters
+    alpha: 0.1          # Learning rate
+    gamma: 0.99         # Discount factor
+    epsilon: 0.3        # Initial exploration rate
+    epsilon_decay: 0.995  # Exploration decay rate
+    epsilon_min: 0.01   # Minimum exploration rate
+
+    # Training settings
+    max_episodes: 1000
+    max_steps_per_episode: 200
+    save_interval: 100  # Save Q-table every N episodes
+
+    # State discretization
+    position_bins: 10    # Bins per joint position dimension
+    velocity_bins: 5     # Bins per joint velocity dimension
+    target_distance_bins: 10  # Bins for distance to target
+
+    # Action space
+    num_velocity_levels: 5  # Discretized velocity adjustments per joint
+
+    # Reward function weights
+    distance_reward_weight: -1.0    # Negative reward for distance
+    waypoint_bonus: 10.0            # Bonus for reaching waypoint
+    joint_limit_penalty: -5.0       # Penalty for approaching joint limits
+    velocity_penalty_weight: -0.1   # Penalty for high velocities
+    smoothness_reward_weight: 0.5   # Reward for smooth motion
+
+    # Environment settings
+    waypoint_threshold: 0.05  # Distance threshold to consider waypoint reached (meters)
+    joint_limit_buffer: 0.1   # Buffer from joint limits (radians)
+
+    # File paths
+    q_table_path: 'q_table.pkl'
+    training_log_path: 'training_log.csv'

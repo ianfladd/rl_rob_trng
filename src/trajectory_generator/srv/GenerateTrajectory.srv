@@ -1,0 +1,12 @@
+# Service to generate joint trajectory from end-effector path
+
+# Request
+geometry_msgs/Pose[] waypoints
+float64 velocity_scaling     # 0.0-1.0, scaling factor for velocity
+float64 acceleration_scaling # 0.0-1.0, scaling factor for acceleration
+bool avoid_collisions        # Enable collision avoidance
+---
+# Response
+bool success
+string message
+trajectory_msgs/JointTrajectory trajectory
